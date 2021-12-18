@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>Listes deroulantes adaptatives</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <script type="text/javascript">
+        var departements = new Array(Array(),
+            Array('Moselle', 'Meuse', 'Vosges', 'Meurthe-et-Moselle'),
+            Array('Bas-Rhin', 'Haut-Rhin'));
+
+        function choixRegion() {
+            document.getElementById("div_departements").innerHTML = '';
+            var idRegion = document.formulaire.regions.value;
+            var buffer = '<select name="description">'; +
+            '<option></option>';
+            if (idRegion != 0) {
+                for (var i = 0; i < departements[idRegion].length; ++i)
+                    buffer += '<option>' + departements[idRegion][i] + '</option>';
+            }
+            buffer += '</select>'
+            document.getElementById('div_departements').innerHTML = buffer;
+        }
+    </script>
+</head>
+
+<body>
+    <form name="formulaire">
+        <select name="regions" onChange="choixRegion()">
+	<option value="0"></option>
+	<option value="1">Lorraine</option>
+	<option value="2">Alsace</option>
+</select>
+
+        <div id="div_departements">
+
+        </div>
+    </form>
+
+</body>
+
+</html>

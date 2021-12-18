@@ -1,0 +1,3 @@
+Pour lancer le projet :
+make && ./main
+Suivi du paramètre voulu (ou non pour 3 par défaut).

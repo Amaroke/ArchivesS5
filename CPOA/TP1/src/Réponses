@@ -1,0 +1,8 @@
+1. Il s'agit du DP Interpretor.
+
+5. J'ai choisi de return un Object, j'aurais pu return void et stocker dans des champs de la classe.
+
+6.Le DP Visitor est bien plus simple à mettre en place.
+
+
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Saisie des couleurs</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        input[type="text"],
+        select {
+            width: 80px;
+            position: absolute;
+            left: 460px;
+        }
+        
+        input[type="button"] {
+            width: 80px;
+            position: absolute;
+            left: 560px;
+        }
+        
+        fieldset {
+            width: 620px;
+        }
+    </style>
+</head>
+
+<body>
+    <SCRIPT language="Javascript">
+        function changeColorBackground(color) {
+            document.body.style.background = color;
+        }
+    </SCRIPT>
+    <h1>Couleurs dynamiques</h1>
+    <form>
+        <fieldset>
+            <legend>Effet immédiat</legend>
+
+            Couleur du texte de la page, à la perte du focus :
+            <input type="text" name="fond" value="white" onBlur="document.fgColor = this.value" />
+            <br /><br /> Couleur de fond de page, à chaque changement de sélection :
+            <select o onChange="document.bgColor = this.value;">
+		<option value="40E0D0"> Turquoise
+		<option value="2E8B57"> Vert
+		<option value="87CEEB"> Bleu ciel
+		<option value="F4A460"> Marron clair
+		<option value="FF1493"> Rose
+		<option value="FFFFFF" selected="selected"> Blanc
+	</select>
+            <br/><br/> Couleur de fond de la case ci-contre, à chaque touche frappée :
+            <input type="text" name="texte" value="#000" onkeyup="document.getElementById('case').style.backgroundColor=this.value" />
+            <span id="case" style="border:solid 1px black; background-color:40E0D0">&nbsp;&nbsp;&nbsp;</span>
+
+        </fieldset>
+        <br />
+
+        <fieldset>
+            <legend>Effet différé</legend>
+
+            <span id="p1" style="background-color:#eee;">Couleur de fond de <strong>ce paragraphe</strong> après click : </span>
+            <input type="text" name="fondparagraphe" value="white" />
+            <input type="button" value="Cliquez" onclick="document.getElementById('p1').style.backgroundColor = document.forms[0].elements['fondparagraphe'].value" />
+    </form>
+
+</body>
+
+</html>
